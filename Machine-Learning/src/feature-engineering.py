@@ -14,5 +14,11 @@ df["Married"] = df["Married"].map({
 
 df = pd.get_dummies(df, columns=["Job", "Education", "Area"])
 
+important_features = [
+    "Annual Income (USD)", "Interest Rate", "Credit Score",
+    "Existing Monthly Debt (USD)", "Down Payment (USD)", "Max Loan Amount (USD)"
+]
+df = df[important_features]
+
 
 df.to_csv('../data/processed.csv', index=False)
