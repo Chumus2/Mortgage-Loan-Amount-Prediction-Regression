@@ -8,6 +8,7 @@
 
     <link rel="icon" type="image/x-icon" href="{%  static 'images/icon.png' %}">
     <link rel="stylesheet" href="{%  static 'stylesheets/main.css' %}">
+    <link rel="stylesheet" href="{%  static 'stylesheets/main_animations.css' %}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,479;1,479&display=swap">
 </head>
 
@@ -83,6 +84,16 @@
 </body>
 
 <script>
+
+    window.addEventListener("DOMContentLoaded", () => {
+        const card = document.querySelector(".Main_Card");
+
+        if (sessionStorage.getItem("visited")) {
+            card.style.animation = "none";
+        } else {
+            sessionStorage.setItem("visited", "true");
+        }
+    });
 
     function closeError() {
         document.querySelector(".Main_Overlay").style.display = "none";
