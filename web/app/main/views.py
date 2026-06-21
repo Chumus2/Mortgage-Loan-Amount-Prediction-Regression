@@ -21,22 +21,22 @@ def check_inputs(request, field : dict):
 
 def main(request):
     if request.method == "POST":
-        annual_income = request.POST.get("annual-income")
-        interest_rate = request.POST.get("interest-rate")
-        credit_score = request.POST.get("credit-score")
-        monthly_debt = request.POST.get("monthly-debt")
-        down_payment = request.POST.get("down-payment")
+        annual_income = request.POST.get("annual_income")
+        interest_rate = request.POST.get("interest_rate")
+        credit_score = request.POST.get("credit_score")
+        monthly_debt = request.POST.get("monthly_debt")
+        down_payment = request.POST.get("down_payment")
 
         fields = {
-            "annual-income": annual_income,
-            "interest-rate": interest_rate,
-            "credit-score": credit_score,
-            "monthly-debt": monthly_debt,
-            "down-payment": down_payment
+            "annual_income": annual_income,
+            "interest_rate": interest_rate,
+            "credit_score": credit_score,
+            "monthly_debt": monthly_debt,
+            "down_payment": down_payment
         }
 
         if not check_inputs(request, fields):
-            return redirect("main")
+            return render(request, "main/main.html")
 
         response = requests.post("http://127.0.0.1:8000/predict", json={
             "annual_income": float(annual_income),

@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="{%  static 'stylesheets/main.css' %}">
 </head>
 
+<header>
+
+
+
+</header>
+
 <body>
 
     <div>
@@ -25,19 +31,19 @@
             {% csrf_token %}
 
             <h2>Annual Income</h2>
-            <input type="text" name="annual-income" placeholder="Annual Income Write Here">
+            <input type="text" name="annual_income" placeholder="Annual Income Write Here" value="{{ request.POST.annual_income }}" autocomplete="off">
 
             <h2>Interest Rate</h2>
-            <input type="text" name="interest-rate" placeholder="Interest Rate Write Here">
+            <input type="text" name="interest_rate" placeholder="Interest Rate Write Here" value="{{ request.POST.interest_rate }}" autocomplete="off">
 
             <h2>Credit Score</h2>
-            <input type="text" name="credit-score" placeholder="Credit Score Write Here">
+            <input type="text" name="credit_score" placeholder="Credit Score Write Here" value="{{ request.POST.credit_score }}" autocomplete="off">
 
             <h2>Existing Monthly Debt</h2>
-            <input type="text" name="monthly-debt" placeholder="Monthly Debt Write Here">
+            <input type="text" name="monthly_debt" placeholder="Monthly Debt Write Here" value="{{ request.POST.monthly_debt }}" autocomplete="off">
 
             <h2>Down Payment</h2>
-            <input type="text" name="down-payment" placeholder="Down Payment Write Here">
+            <input type="text" name="down_payment" placeholder="Down Payment Write Here" value="{{ request.POST.down_payment }}" autocomplete="off">
 
             <button type="submit">Calculate</button>
         </form>
