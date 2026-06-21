@@ -10,7 +10,7 @@ model = joblib.load("../Machine-Learning/models/model.pkl")
 
 
 class LoadInput(BaseModel):
-    annual_salary: float
+    annual_income: float
     interest_rate: float
     credit_score: float
     existing_monthly_debt: float

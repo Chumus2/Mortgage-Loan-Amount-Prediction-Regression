@@ -12,28 +12,42 @@
 
 <body>
 
-    <h1>Loan Amount Predictor App</h1>
+    <div>
+        <h1>Loan Amount Predictor App</h1>
 
-    <form action="{%  url 'main' %}" method="post">
-        {% csrf_token %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        {% endif %}
 
-        <h2>Annual Income</h2>
-        <input type="text" name="annual-income" placeholder="Annual Income Write Here">
+        <form action="{%  url 'main' %}" method="post">
+            {% csrf_token %}
 
-        <h2>Interest Rate</h2>
-        <input type="text" name="interest-rate" placeholder="Interest Rate Write Here">
+            <h2>Annual Income</h2>
+            <input type="text" name="annual-income" placeholder="Annual Income Write Here">
 
-        <h2>Credit Score</h2>
-        <input type="text" name="credit-score" placeholder="Credit Score Write Here">
+            <h2>Interest Rate</h2>
+            <input type="text" name="interest-rate" placeholder="Interest Rate Write Here">
 
-        <h2>Existing Monthly Debt</h2>
-        <input type="text" name="monthly-debt" placeholder="Monthly Debt Write Here">
+            <h2>Credit Score</h2>
+            <input type="text" name="credit-score" placeholder="Credit Score Write Here">
 
-        <h2>Down Payment</h2>
-        <input type="text" name="down-payment" placeholder="Down Payment Write Here">
+            <h2>Existing Monthly Debt</h2>
+            <input type="text" name="monthly-debt" placeholder="Monthly Debt Write Here">
 
-        <button type="submit">Calculate</button>
-    </form>
+            <h2>Down Payment</h2>
+            <input type="text" name="down-payment" placeholder="Down Payment Write Here">
+
+            <button type="submit">Calculate</button>
+        </form>
+    </div>
+
+    <div>
+        <h3>
+            Max Loan Amount: {% if result %}${{ result }}{% else %}---{% endif %}
+        </h3>
+    </div>
 
 </body>
 
