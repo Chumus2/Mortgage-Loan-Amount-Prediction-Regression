@@ -47,6 +47,11 @@ def main(request):
         })
 
         result = f"{response.json()["max_loan_amount"]:,.2f}"
+
+        if float(result) < 0:
+            messages.error(request, f"Invalid input combination. Please check your values.")
+            return render(request, "main/main.html")
+
         return  render(request, "main/main.html", {"result": result})
 
     return render(request, "main/main.html")
