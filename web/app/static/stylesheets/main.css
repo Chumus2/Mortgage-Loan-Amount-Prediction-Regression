@@ -30,6 +30,8 @@ button {
 input {
     outline: none;
     border: none;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 img {
@@ -211,4 +213,69 @@ main {
 
 .Main_Result {
     font-size: 1.75rem;
+}
+
+
+/* Responsibility */
+/* Phones */
+@media (max-width: 768px) {
+    header {
+        padding-inline: 1.5rem;
+    }
+
+    .Header_Texts > h2 {
+        font-size: 1.4rem;
+    }
+
+    .Header_Texts > img {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    body {
+        overflow-y: auto;
+    }
+
+    main {
+        height: auto;
+        min-height: calc(100vh - 4.5rem);
+        padding: 2rem 1rem;
+    }
+
+    .Main_Card {
+        width: 100%;
+        max-width: 450px;
+        height: auto;
+        padding: 2rem 1rem;
+    }
+
+    .Main_Title {
+        font-size: 2.2rem;
+    }
+
+    .Main_Form {
+        padding-top: 1rem;
+        padding-inline: 0.5rem;
+        gap: 1.25rem;
+    }
+
+    .Form_Field > h2 {
+        font-size: 1.5rem;
+    }
+
+    .Form_Field > input {
+        height: 2.75rem;
+        font-size: 1.2rem;
+    }
+
+    .Form_Submit_Button {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.3rem;
+    }
+
+    .Main_Error_Dropdown {
+        min-width: 85%;
+        padding: 1.5rem;
+    }
 }
