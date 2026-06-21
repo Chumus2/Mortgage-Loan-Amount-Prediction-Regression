@@ -10,50 +10,55 @@
     <link rel="stylesheet" href="{%  static 'stylesheets/main.css' %}">
 </head>
 
-<header>
-
-
-
-</header>
-
 <body>
 
-    <div>
-        <h1>Loan Amount Predictor App</h1>
+    <header>
+
+        <div class="Header_Texts">
+            <h2>Mortgage Loan Amount Predictor</h2>
+            <img src="{% static 'images/icon.png' %}">
+        </div>
+
+    </header>
+
+    <main>
+
+        <h1 class="Main_Title">Loan Amount Predictor App</h1>
 
         {% if messages %}
             {% for message in messages %}
-                <p>{{ message }}</p>
+                <p class="Main_Error">{{ message }}</p>
             {% endfor %}
         {% endif %}
 
-        <form action="{%  url 'main' %}" method="post">
+        <form action="{%  url 'main' %}" method="post" id="Main_Form">
             {% csrf_token %}
 
-            <h2>Annual Income</h2>
-            <input type="text" name="annual_income" placeholder="Annual Income Write Here" value="{{ request.POST.annual_income }}" autocomplete="off">
+            <h2 class="Form_Input_Title">Annual Income</h2>
+            <input type="text" name="annual_income" placeholder="Annual Income Write Here" value="{{ request.POST.annual_income }}" class="Form_Input" autocomplete="off">
 
-            <h2>Interest Rate</h2>
-            <input type="text" name="interest_rate" placeholder="Interest Rate Write Here" value="{{ request.POST.interest_rate }}" autocomplete="off">
+            <h2 class="Form_Input_Title">Interest Rate</h2>
+            <input type="text" name="interest_rate" placeholder="Interest Rate Write Here" value="{{ request.POST.interest_rate }}" class="Form_Input" autocomplete="off">
 
-            <h2>Credit Score</h2>
-            <input type="text" name="credit_score" placeholder="Credit Score Write Here" value="{{ request.POST.credit_score }}" autocomplete="off">
+            <h2 class="Form_Input_Title">Credit Score</h2>
+            <input type="text" name="credit_score" placeholder="Credit Score Write Here" value="{{ request.POST.credit_score }}" class="Form_Input" autocomplete="off">
 
-            <h2>Existing Monthly Debt</h2>
-            <input type="text" name="monthly_debt" placeholder="Monthly Debt Write Here" value="{{ request.POST.monthly_debt }}" autocomplete="off">
+            <h2 class="Form_Input_Title">Existing Monthly Debt</h2>
+            <input type="text" name="monthly_debt" placeholder="Monthly Debt Write Here" value="{{ request.POST.monthly_debt }}" class="Form_Input" autocomplete="off">
 
-            <h2>Down Payment</h2>
-            <input type="text" name="down_payment" placeholder="Down Payment Write Here" value="{{ request.POST.down_payment }}" autocomplete="off">
+            <h2 class="Form_Input_Title">Down Payment</h2>
+            <input type="text" name="down_payment" placeholder="Down Payment Write Here" value="{{ request.POST.down_payment }}" class="Form_Input" autocomplete="off">
 
-            <button type="submit">Calculate</button>
+            <button type="submit" class="Form_Submit_Button">Calculate</button>
         </form>
-    </div>
 
-    <div>
-        <h3>
-            Max Loan Amount: {% if result %}${{ result }}{% else %}---{% endif %}
-        </h3>
-    </div>
+        <div class="Main_Result">
+            <h3>
+                Max Loan Amount: {% if result %}${{ result }}{% else %}---{% endif %}
+            </h3>
+        </div>
+
+    </main>
 
 </body>
 
