@@ -85,13 +85,13 @@
 
 <script>
 
-    window.addEventListener("DOMContentLoaded", () => {
-        const card = document.querySelector(".Main_Card");
+    window.addEventListener('DOMContentLoaded', () => {
+        const card = document.querySelector('.Main_Card');
 
-        if (sessionStorage.getItem("visited")) {
-            card.style.animation = "none";
+        if (sessionStorage.getItem('animated')) {
+            card.style.animation = 'none';
         } else {
-            sessionStorage.setItem("visited", "true");
+            sessionStorage.setItem('animated', 'true');
         }
     });
 

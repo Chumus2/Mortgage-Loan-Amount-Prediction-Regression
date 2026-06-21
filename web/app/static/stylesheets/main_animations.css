@@ -6,6 +6,10 @@
     animation: fadeIn 0.5s ease forwards;
 }
 
+.Main_Error_Dropdown {
+    animation: scaleIn 0.25s ease forwards;
+}
+
 
 /* Animations */
 @keyframes fadeInUp  {
@@ -23,4 +27,44 @@
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* Input focuses */
+.Form_Field > input {
+    transition: border 0.2s ease, background 0.2s ease;
+}
+
+.Form_Field > input:focus {
+    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.Form_Submit_Button {
+    transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.Form_Submit_Button:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
+.Form_Submit_Button:active {
+    transform: translateY(0);
+}
+
+.Main_Error_Close {
+    transition: opacity 0.2s ease;
 }
