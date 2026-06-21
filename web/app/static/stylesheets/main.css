@@ -87,6 +87,62 @@ main {
     position: relative;
 }
 
+
+/* Errors */
+.Main_Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Main_Error_Dropdown {
+    background: #1e2235;
+    border: 1px solid #ff6b6b;
+    border-radius: 10px;
+    padding: 2rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    min-width: 300px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.Main_Error_List {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.Main_Error {
+    color: #252e4a;
+    font-size: 1.5rem;
+    text-decoration: underline;
+}
+
+.Main_Error_Close {
+    align-self: center;
+    padding: 0.5rem 2rem;
+    background: linear-gradient(to right, #6a758a, #52618c);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+}
+
+.Main_Error_Close:hover {
+    opacity: 0.85;
+}
+
+
 /* Card */
 .Main_Card {
     width: 30vw;
@@ -103,19 +159,6 @@ main {
 
 .Main_Title {
     font-size: 2.75rem;
-}
-
-.Main_Error_List {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.25rem;
-}
-
-.Main_Error {
-    color: #252e4a;
-    font-size: 1.5rem;
-    text-decoration: underline;
 }
 
 .Main_Form {

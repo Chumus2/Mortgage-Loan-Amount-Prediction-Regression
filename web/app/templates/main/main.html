@@ -24,16 +24,23 @@
 
     <main>
 
+        {% if messages %}
+            <div class="Main_Overlay">
+
+                <div class="Main_Error_Dropdown">
+                    <ul class="Main_Error_List">
+                        {% for message in messages %}
+                            <li class="Main_Error"><b>{{ message }}</b></li>
+                        {% endfor %}
+                    </ul>
+                    <button class="Main_Error_Close" onclick="closeError()">Close</button>
+                </div>
+
+            </div>
+        {% endif %}
+
         <div class="Main_Card">
             <h1 class="Main_Title"><b>Loan Amount Predictor App</b></h1>
-
-            {% if messages %}
-                <ul class="Main_Error_List">
-                    {% for message in messages %}
-                        <li class="Main_Error"><b>{{ message }}</b></li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
 
             <form action="{%  url 'main' %}" method="post" class="Main_Form">
                 {% csrf_token %}
