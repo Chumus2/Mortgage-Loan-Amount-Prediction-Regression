@@ -38,7 +38,7 @@ def main(request):
         if not check_inputs(request, fields):
             return render(request, "main/main.html")
 
-        response = requests.post("http://127.0.0.1:8000/predict", json={
+        response = requests.post("http://api:8000/predict", json={
             "annual_income": float(annual_income),
             "interest_rate": float(interest_rate),
             "credit_score": float(credit_score),
@@ -46,11 +46,13 @@ def main(request):
             "down_payment": float(down_payment)
         })
 
-        result = f"{response.json()["max_loan_amount"]:,.2f}"
+        raw_result = response.json()['max_loan_amount']
 
-        if float(result) < 0:
+        if raw_result < 0:
             messages.error(request, f"Invalid input combination. Please check your values.")
             return render(request, "main/main.html")
+
+        result = f"{raw_result:,.2f}"
 
         return  render(request, "main/main.html", {"result": result})
 

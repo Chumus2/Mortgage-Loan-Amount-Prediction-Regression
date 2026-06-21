@@ -70,27 +70,17 @@ Mortgage-Loan-Amount-Prediction/
 ### 1. Clone the repository
 ```bash
 git clone https://github.com/Chumus2/Mortgage-Loan-Amount-Prediction-Regression.git
+cd Mortgage-Loan-Amount-Prediction-Regression
 ```
 
-### 2. Install dependencies
+### 2. Run the Docker
 ```bash
-pip install -r requirements.txt
+docker-compose up --build
 ```
 
-### 3. Run FastAPI
-```bash
-cd Api
-uvicorn app:app --port 8000
-```
-
-### 4. Run Django
-```bash
-cd web/app
-python manage.py runserver 8001
-```
-
-### 5. Open in browser 
-http://127.0.0.1:8001
+### 3. Open in browser
+- **Web App:** http://localhost:8001 or http://127.0.0.1:8001
+- **API Docs:** http://localhost:8000/docs
 
 ---
 
@@ -98,3 +88,17 @@ http://127.0.0.1:8001
 
 FastAPI auto-generates interactive docs:<br>
 http://127.0.0.1:8000/docs
+
+---
+
+## How to Use
+
+1. Open http://localhost:8001 or http://127.0.0.1:8001 in your browser
+2. Fill in your financial details:
+    - **Annual Income** — your yearly income in USD
+    - **Interest Rate** — loan rate as decimal (e.g. `0.05` for 5%)
+    - **Credit Score** — your credit score (580–850)
+    - **Existing Monthly Debt** — current monthly debt in USD
+    - **Down Payment** — initial payment amount in USD
+3. Click **Calculate**
+4. Get your predicted maximum loan amount 
